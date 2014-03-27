@@ -1,0 +1,67 @@
+<?php 
+	@$auth 		= Zend_Auth::getInstance();
+	$user 		= $auth->getStorage()->read();
+	//var_dump($user->role_id);die();
+	
+	if(isset($user->userid))
+	{
+?>
+
+</script>
+
+<header>
+      <nav class='navbar navbar-default ' style="background-color: #00ACEC; height: 40px;">
+        <a class='navbar-brand' href='<?php echo WEB_PATH;?>/administrator'>
+        <!-- 
+          <img width="40" height="40" class="logo" alt="User Tracking" src="<?php echo WEB_PATH;?>/public/assets/images/logo-web1.png" />
+          <img width="21" height="21" class="logo-xs" alt="User Tracking" src="<?php echo WEB_PATH;?>/public/assets/images/logo-web1.png" />
+        -->
+        </a>
+        <a class='toggle-nav btn pull-left' href='#' style="background-color: #00ACEC">
+          <i class='icon-reorder'></i>
+        </a>
+        <ul class='nav' style="background-color: #00ACEC">
+          <li class='dropdown light  user-menu'>
+            <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+              <img style="border: 0px;" width="23" height="23" alt="<?php echo $user->firstname.' '.$user->lastname;?>" src="<?php echo WEB_PATH;?>/public/assets/images/person.png" />
+              <span class='user-name'><?php echo $user->lastname.' '.$user->firstname;?> </span>
+              <b class='caret'></b>
+            </a>
+            
+            <ul class='dropdown-menu '>
+            <?php /* 
+              <li>
+                <a href='<?php echo WEB_PATH;?>/administrator/user/profile'>
+                  <i class='icon-user'></i>
+                  My profile
+                </a>
+              </li>
+              */ ?>
+              <li>
+                <a href='<?php echo WEB_PATH;?>/administrator/user/changepass'>
+                  <i class=' icon-edit '></i>
+                  Change password
+                </a>
+              </li>
+              <li class='divider'></li>
+              <li>
+                <a href="<?php echo WEB_PATH;?>/front/index/logout">
+                  <i class='icon-signout'></i>
+                  Sign out
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+      </nav>
+    </header>
+<?php 
+	}// if(isset($user->userid))
+?>
+
+
+	
+
+	
+
