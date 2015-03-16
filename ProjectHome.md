@@ -1,0 +1,1 @@
+alatcamagazin-next
